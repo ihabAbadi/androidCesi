@@ -7,7 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,12 +25,12 @@ public class MainActivity extends AppCompatActivity {
         text.setText("Contenu du text");
         ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.WRAP_CONTENT, ConstraintLayout.LayoutParams.WRAP_CONTENT);
         c.addView(text, params);*/
-        TextView text = new TextView(this);
+        /*TextView text = new TextView(this);
         text.setText("Contenu Ajouté");
-        setContentView(R.layout.activity_main);
+
         RelativeLayout layout = findViewById(R.id.main_activity_relative_layout);
         layout.addView(text, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-        Button b1 = (Button) findViewById(R.id.b1);
+        Button b1 = (Button) findViewById(R.id.b1);*/
         /*b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,10 +42,9 @@ public class MainActivity extends AppCompatActivity {
             Button b = (Button) v;
             b.setText(b.getText()+" Added after click");
         });*/
+        setContentView(R.layout.activity_main);
+
     }
 
-    public void onClickb1(View v) {
-        Button b = (Button) v;
-        b.setText(b.getText()+" Added after click");
-    }
+
 }

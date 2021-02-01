@@ -5,23 +5,94 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MorpionActivity">
-<TableLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" android:id="@+id/layout_morpion">
-    <TableRow android:layout_width="match_parent" android:layout_weight=".33">
-        <TextView android:layout_weight=".33" android:layout_height="match_parent" style="@style/morpionTextView"></TextView>
-        <TextView android:layout_weight=".33" android:layout_height="match_parent" style="@style/morpionTextView"></TextView>
-        <TextView android:layout_weight=".33" android:layout_height="match_parent" style="@style/morpionTextView"></TextView>
-    </TableRow>
-    <TableRow android:layout_width="match_parent" android:layout_weight=".33">
-        <TextView android:layout_weight=".33" android:layout_height="match_parent" style="@style/morpionTextView"></TextView>
-        <TextView android:layout_weight=".33" android:layout_height="match_parent" style="@style/morpionTextView"></TextView>
-        <TextView android:layout_weight=".33" android:layout_height="match_parent" style="@style/morpionTextView"></TextView>
-    </TableRow>
-    <TableRow android:layout_width="match_parent" android:layout_weight=".33">
-        <TextView android:layout_weight=".33" android:layout_height="match_parent" style="@style/morpionTextView"></TextView>
-        <TextView android:layout_weight=".33" android:layout_height="match_parent" style="@style/morpionTextView"></TextView>
-        <TextView android:layout_weight=".33" android:layout_height="match_parent" style="@style/morpionTextView"></TextView>
-    </TableRow>
-</TableLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:orientation="vertical">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/start_morpion" android:text="Start"></Button>
+
+        <TableLayout
+            android:id="@+id/layout_morpion"
+            android:layout_width="match_parent"
+            android:layout_height="635dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_weight=".33">
+
+                <TextView
+                    style="@style/morpionTextView"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".33"></TextView>
+
+                <TextView
+                    style="@style/morpionTextView"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".33"></TextView>
+
+                <TextView
+                    style="@style/morpionTextView"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".33"></TextView>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_weight=".33">
+
+                <TextView
+                    style="@style/morpionTextView"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".33"></TextView>
+
+                <TextView
+                    style="@style/morpionTextView"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".33"></TextView>
+
+                <TextView
+                    style="@style/morpionTextView"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".33"></TextView>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_weight=".33">
+
+                <TextView
+                    style="@style/morpionTextView"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".33"></TextView>
+
+                <TextView
+                    style="@style/morpionTextView"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".33"></TextView>
+
+                <TextView
+                    style="@style/morpionTextView"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".33"></TextView>
+            </TableRow>
+        </TableLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="Joueur X"></TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/score_x" android:text="0"></TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"  android:text="Joueur O"></TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/score_o" android:text="0"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

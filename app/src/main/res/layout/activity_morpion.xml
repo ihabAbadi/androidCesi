@@ -24,17 +24,17 @@
                 <TextView
                     style="@style/morpionTextView"
                     android:layout_height="match_parent"
-                    android:layout_weight=".33"></TextView>
+                    android:layout_weight=".33" android:tag="1"></TextView>
 
                 <TextView
                     style="@style/morpionTextView"
                     android:layout_height="match_parent"
-                    android:layout_weight=".33"></TextView>
+                    android:layout_weight=".33"  android:tag="2"></TextView>
 
                 <TextView
                     style="@style/morpionTextView"
                     android:layout_height="match_parent"
-                    android:layout_weight=".33"></TextView>
+                    android:layout_weight=".33" android:tag="3"></TextView>
             </TableRow>
 
             <TableRow
@@ -44,17 +44,17 @@
                 <TextView
                     style="@style/morpionTextView"
                     android:layout_height="match_parent"
-                    android:layout_weight=".33"></TextView>
+                    android:layout_weight=".33" android:tag="1"></TextView>
 
                 <TextView
                     style="@style/morpionTextView"
                     android:layout_height="match_parent"
-                    android:layout_weight=".33"></TextView>
+                    android:layout_weight=".33" android:tag="2"></TextView>
 
                 <TextView
                     style="@style/morpionTextView"
                     android:layout_height="match_parent"
-                    android:layout_weight=".33"></TextView>
+                    android:layout_weight=".33" android:tag="3"></TextView>
             </TableRow>
 
             <TableRow
@@ -64,17 +64,17 @@
                 <TextView
                     style="@style/morpionTextView"
                     android:layout_height="match_parent"
-                    android:layout_weight=".33"></TextView>
+                    android:layout_weight=".33" android:tag="1"></TextView>
 
                 <TextView
                     style="@style/morpionTextView"
                     android:layout_height="match_parent"
-                    android:layout_weight=".33"></TextView>
+                    android:layout_weight=".33" android:tag="2"></TextView>
 
                 <TextView
                     style="@style/morpionTextView"
                     android:layout_height="match_parent"
-                    android:layout_weight=".33"></TextView>
+                    android:layout_weight=".33" android:tag="3"></TextView>
             </TableRow>
         </TableLayout>
         <LinearLayout

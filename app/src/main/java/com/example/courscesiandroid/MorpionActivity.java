@@ -17,6 +17,8 @@ public class MorpionActivity extends AppCompatActivity {
     private boolean firstPlayer = true;
     private boolean start = false;
     private int nb = 0;
+    private int nbWinX = 0;
+    private int nbWinO = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,11 +56,26 @@ public class MorpionActivity extends AppCompatActivity {
                 firstPlayer = !firstPlayer;
                 text.setText(s);
                 nb++;
-                if(nb == 9) {
+                if(testWin(s)) {
+                    if(s == "X")
+                        nbWinX++;
+                    else if(s == "O")
+                        nbWinO++;
+                    updateScore();
+                    changeStateButton(false);
+                }
+                else if(nb == 9) {
                     changeStateButton(false);
                 }
             }
         }
+    }
+
+    private void updateScore() {
+        TextView scoreX = (TextView) findViewById(R.id.score_x);
+        scoreX.setText(String.valueOf(nbWinX));
+        TextView scoreO = (TextView) findViewById(R.id.score_o);
+        scoreO.setText(String.valueOf(nbWinO));
     }
 
     private List<TextView> getAllTextView() {
@@ -74,9 +91,87 @@ public class MorpionActivity extends AppCompatActivity {
         return liste;
     }
 
-
     private boolean testWin(String joueur) {
-        return false;
+        return testWinX(joueur) || testWinDiag1(joueur) || testWinDiag2(joueur) || testWinY(joueur);
     }
 
+    private boolean testWinX(String joueur) {
+        //Vérification sur les lignes
+        boolean win = false;
+        TableLayout layout = (TableLayout) findViewById(R.id.layout_morpion);
+        for(int i=0; i < layout.getChildCount(); i++) {
+            TableRow t = (TableRow) layout.getChildAt(i);
+            win = true;
+            for(int j=0; j < t.getChildCount(); j++) {
+                TextView text = (TextView) t.getChildAt(j);
+                if(text.getText() != joueur)
+                    win = false;
+            }
+            if(win)
+                break;
+        }
+        return win;
+    }
+
+    private boolean testWinY(String joueur) {
+        boolean win = false;
+
+        for(int i=1; i <=3; i++) {
+            List<String> val = new ArrayList<>();
+            win = true;
+            for(TextView t:getAllTextView()){
+                if((int)t.getTag()==i){
+                    val.add(t.getText().toString());
+                }
+            }
+            for(String s:val) {
+                if(s != joueur) {
+                    win = false;
+                }
+            }
+        }
+        return  win;
+    }
+
+    private boolean testWinDiag1(String joueur) {
+        boolean win = false;
+        TableLayout layout = (TableLayout) findViewById(R.id.layout_morpion);
+        for(int i=0; i < layout.getChildCount(); i++) {
+            List<String> val = new ArrayList<>();
+            win = true;
+            TableRow t = (TableRow) layout.getChildAt(i);
+            for(int j=0; j < t.getChildCount(); j++) {
+                TextView text = (TextView) t.getChildAt(j);
+                if(i == j)
+                    val.add(text.getText().toString());
+            }
+            for(String s:val) {
+                if(s != joueur) {
+                    win = false;
+                }
+            }
+        }
+        return  win;
+    }
+
+    private boolean testWinDiag2(String joueur) {
+        boolean win = false;
+        TableLayout layout = (TableLayout) findViewById(R.id.layout_morpion);
+        for(int i=0; i < layout.getChildCount(); i++) {
+            List<String> val = new ArrayList<>();
+            win = true;
+            TableRow t = (TableRow) layout.getChildAt(i);
+            for(int j=t.getChildCount()-1; j >= 0; j--) {
+                TextView text = (TextView) t.getChildAt(j);
+                if(i+j == 2)
+                    val.add(text.getText().toString());
+            }
+            for(String s:val) {
+                if(s != joueur) {
+                    win = false;
+                }
+            }
+        }
+        return  win;
+    }
 }

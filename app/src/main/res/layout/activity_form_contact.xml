@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FormContactActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:orientation="vertical">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:hint="Merci de saisir votre nom : " android:inputType="text" android:id="@+id/form_firstname"></EditText>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:hint="Merci de saisir votre prénom : " android:inputType="text" android:id="@+id/form_lastname"></EditText>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:hint="Merci de saisir votre téléphone : " android:inputType="phone" android:id="@+id/form_phone"></EditText>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:hint="Merci de saisir votre mail : " android:inputType="textEmailAddress" android:id="@+id/form_mail"></EditText>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="Valider" android:onClick="confirmContact"></Button>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

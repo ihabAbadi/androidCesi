@@ -9,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CoursCesiAndroid">
-        <activity android:name=".DemoRecyclerViewActivity"></activity>
+        <activity android:name=".ContactsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".FormContactActivity" />
+        <activity android:name=".DemoRecyclerViewActivity" />
         <activity android:name=".GameActivity" />
         <activity android:name=".HomeActivity">
             <intent-filter>

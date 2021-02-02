@@ -120,7 +120,9 @@ public class MorpionActivity extends AppCompatActivity {
             List<String> val = new ArrayList<>();
             win = true;
             for(TextView t:getAllTextView()){
-                if((int)t.getTag()==i){
+                String valTag = (String) t.getTag();
+                String valI = String.valueOf(i);
+                if(valTag.equals(valI)){
                     val.add(t.getText().toString());
                 }
             }
@@ -130,7 +132,7 @@ public class MorpionActivity extends AppCompatActivity {
                 }
             }
         }
-        return  win;
+        return win;
     }
 
     private boolean testWinDiag1(String joueur) {

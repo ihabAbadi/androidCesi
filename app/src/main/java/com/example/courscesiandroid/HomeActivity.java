@@ -37,6 +37,11 @@ public class HomeActivity extends AppCompatActivity {
 //            startActivity(intent);
             startActivityForResult(intent, 3);
         });
+
+        (findViewById(R.id.go_to_recycler)).setOnClickListener((v) -> {
+            Intent intent = new Intent(this, DemoRecyclerViewActivity.class);
+            startActivity(intent);
+        });
     }
 
     @Override

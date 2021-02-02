@@ -15,6 +15,9 @@
     </EditText>
     <Button
         android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:id="@+id/go_to_recycler" android:text="Exemple RecyclerView"></Button>
+    <Button
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" android:id="@+id/go_to_morpion" android:text="Jeu du morpion"></Button>
     <Button
         android:layout_width="match_parent"

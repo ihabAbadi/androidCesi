@@ -4,6 +4,10 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,6 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CoursCesiAndroid">
+        <activity android:name=".CameraActivity">
+            
+        </activity>
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,15 +25,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainActivity2"
             android:label="@string/title_activity_main2"
             android:theme="@style/Theme.CoursCesiAndroid.NoActionBar" />
         <activity android:name=".ContactActivity" />
-        <activity android:name=".ContactsActivity">
-
-        </activity>
+        <activity android:name=".ContactsActivity"></activity>
         <activity android:name=".FormContactActivity" />
         <activity android:name=".DemoRecyclerViewActivity" />
         <activity android:name=".GameActivity" />

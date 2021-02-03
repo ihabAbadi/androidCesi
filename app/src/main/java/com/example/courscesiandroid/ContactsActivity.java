@@ -23,7 +23,12 @@ public class ContactsActivity extends AppCompatActivity {
         ourRecyclerView = (RecyclerView) findViewById(R.id.contacts_recycler);
         ourLayoutManager = new LinearLayoutManager(this);
         ourRecyclerView.setLayoutManager(ourLayoutManager);
-        ourAdapter = new ContactAdapter(ContactService.getInstance().getContacts());
+        ourAdapter = new ContactAdapter(ContactService.getInstance().getContacts(), (v)-> {
+            int id = Integer.parseInt(v.getTag().toString());
+            Intent intent = new Intent(this, ContactActivity.class);
+            intent.putExtra("id", id);
+            startActivity(intent);
+        });
         ourRecyclerView.setAdapter(ourAdapter);
     }
 
@@ -37,8 +42,9 @@ public class ContactsActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(resultCode == 1) {
-            ourAdapter = new ContactAdapter(ContactService.getInstance().getContacts());
-            ourRecyclerView.setAdapter(ourAdapter);
+            /*ourAdapter = new ContactAdapter(ContactService.getInstance().getContacts());
+            ourRecyclerView.setAdapter(ourAdapter);*/
+            ourAdapter.notifyDataSetChanged();
         }
     }
 }

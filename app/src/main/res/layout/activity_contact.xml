@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ContactActivity">
+
+<TableLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TableRow>
+        <TextView android:text="Nom : " android:layout_weight=".5"></TextView>
+        <TextView android:id="@+id/contact_display_firstname" android:layout_weight=".5"></TextView>
+    </TableRow>
+    <TableRow>
+        <TextView android:text="Prénom : " android:layout_weight=".5"></TextView>
+        <TextView android:id="@+id/contact_display_lastname" android:layout_weight=".5"></TextView>
+    </TableRow>
+    <TableRow>
+        <TextView android:text="Téléphone : " android:layout_weight=".5"></TextView>
+        <TextView android:id="@+id/contact_display_phone" android:layout_weight=".5"></TextView>
+    </TableRow>
+    <TableRow>
+        <TextView android:text="Email : " android:layout_weight=".5"></TextView>
+        <TextView android:id="@+id/contact_display_mail" android:layout_weight=".5"></TextView>
+    </TableRow>
+</TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

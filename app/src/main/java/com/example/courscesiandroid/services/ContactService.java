@@ -19,8 +19,8 @@ public class ContactService {
         return instance;
     }
 
-    public void addContact(String firstName, String lastName, String phone, String mail) {
-        Contact contact = new Contact(firstName, lastName, phone, mail);
+    public void addContact(String firstName, String lastName, String phone, String mail, String avatarUrl) {
+        Contact contact = new Contact(firstName, lastName, phone, mail, avatarUrl);
         contacts.add(contact);
     }
 
@@ -30,5 +30,15 @@ public class ContactService {
 
     public Contact getContact(int id) {
         return contacts.get(id);
+    }
+
+    public List<Contact> searchContacts(String search) {
+        List<Contact> result = new ArrayList<>();
+        for(Contact c:contacts) {
+            if(c.getFirstName().contains(search)) {
+                result.add(c);
+            }
+        }
+        return result;
     }
 }

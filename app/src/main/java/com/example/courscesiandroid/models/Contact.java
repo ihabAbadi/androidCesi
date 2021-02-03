@@ -8,11 +8,15 @@ public class Contact {
     private String phone;
     private String mail;
 
-    public Contact(String firstName, String lastName, String phone, String mail) {
+
+    private String avatarUrl;
+
+    public Contact(String firstName, String lastName, String phone, String mail, String avatarUrl) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
         this.mail = mail;
+        this.avatarUrl = avatarUrl;
     }
 
 
@@ -47,4 +51,13 @@ public class Contact {
     public void setMail(String mail) {
         this.mail = mail;
     }
+
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
+    }
+
 }

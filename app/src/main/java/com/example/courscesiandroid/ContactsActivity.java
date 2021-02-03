@@ -8,7 +8,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.example.courscesiandroid.adapters.ContactAdapter;
@@ -17,7 +20,7 @@ import com.squareup.picasso.Picasso;
 
 public class ContactsActivity extends AppCompatActivity {
     private RecyclerView ourRecyclerView;
-    private RecyclerView.Adapter ourAdapter;
+    private ContactAdapter ourAdapter;
     private RecyclerView.LayoutManager ourLayoutManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +42,26 @@ public class ContactsActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = shared.edit();
         editor.putString("test", "dataTest");
         editor.commit();
+        EditText editSearch = ((EditText)findViewById(R.id.search));
+        editSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                ourAdapter.setContacts(ContactService.getInstance().searchContacts(editSearch.getText().toString()));
+                ourAdapter.notifyDataSetChanged();
+            }
+        });
         //Récupérer une image par url et l'afficher
-        Picasso.get().load("https://picsum.photos/200/300").into((ImageView)findViewById(R.id.image_contact));
+//        Picasso.get().load("https://picsum.photos/200/300").into((ImageView)findViewById(R.id.image_contact));
     }
 
 

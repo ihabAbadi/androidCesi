@@ -20,6 +20,9 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:hint="Merci de saisir votre mail : " android:inputType="textEmailAddress" android:id="@+id/form_mail"></EditText>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:hint="URL avatar : " android:inputType="textUri" android:id="@+id/form_avatar"></EditText>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:text="Valider" android:onClick="confirmContact"></Button>

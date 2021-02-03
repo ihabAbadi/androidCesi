@@ -10,10 +10,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.courscesiandroid.R;
 import com.example.courscesiandroid.models.Contact;
 import com.example.courscesiandroid.viewHolders.ContactViewHolder;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 public class ContactAdapter extends RecyclerView.Adapter<ContactViewHolder> {
+    public void setContacts(List<Contact> contacts) {
+        this.contacts = contacts;
+    }
+
     List<Contact> contacts;
     View.OnClickListener onClick;
     public ContactAdapter(List<Contact> contacts, View.OnClickListener onClick) {
@@ -35,6 +40,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactViewHolder> {
         holder.getTxtLastName().setText(p.getLastName());
         holder.getTxtFirstName().setTag(position);
         holder.getTxtLastName().setTag(position);
+        Picasso.get().load(p.getAvatarUrl()).into(holder.getImgAvatar());
         holder.getTxtLastName().setOnClickListener(onClick);
         holder.getTxtFirstName().setOnClickListener(onClick);
     }

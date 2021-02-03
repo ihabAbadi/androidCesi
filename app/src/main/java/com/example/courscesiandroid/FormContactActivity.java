@@ -23,7 +23,8 @@ public class FormContactActivity extends AppCompatActivity {
         String lastname = ((TextView)findViewById(R.id.form_lastname)).getText().toString();
         String phone = ((TextView)findViewById(R.id.form_phone)).getText().toString();
         String mail = ((TextView)findViewById(R.id.form_mail)).getText().toString();
-        ContactService.getInstance().addContact(fistName, lastname, phone, mail);
+        String avatarUrl = ((TextView)findViewById(R.id.form_avatar)).getText().toString();
+        ContactService.getInstance().addContact(fistName, lastname, phone, mail, avatarUrl);
         setResult(1);
         finish();
     }

@@ -24,7 +24,7 @@ public class ContactActivity extends AppCompatActivity {
         setTitle(contact.getFirstName());
 
         //Récupérer les données à partir d'un sharedPreferences
-        SharedPreferences shared = getSharedPreferences("ourApplication", MODE_PRIVATE);
-        String test = shared.getString("test", "");
+        /*SharedPreferences shared = getSharedPreferences("ourApplication", MODE_PRIVATE);
+        String test = shared.getString("test", "");*/
     }
 }

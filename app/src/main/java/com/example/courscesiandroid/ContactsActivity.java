@@ -37,11 +37,11 @@ public class ContactsActivity extends AppCompatActivity {
         });
         ourRecyclerView.setAdapter(ourAdapter);
 
-        //Stockage des données dans un objet de type sharedPreferences
+        /*//Stockage des données dans un objet de type sharedPreferences
         SharedPreferences shared = getSharedPreferences("ourApplication", MODE_PRIVATE);
         SharedPreferences.Editor editor = shared.edit();
         editor.putString("test", "dataTest");
-        editor.commit();
+        editor.commit();*/
         EditText editSearch = ((EditText)findViewById(R.id.search));
         editSearch.addTextChangedListener(new TextWatcher() {
             @Override

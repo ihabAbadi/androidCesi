@@ -6,11 +6,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.example.courscesiandroid.adapters.ContactAdapter;
 import com.example.courscesiandroid.services.ContactService;
+import com.squareup.picasso.Picasso;
 
 public class ContactsActivity extends AppCompatActivity {
     private RecyclerView ourRecyclerView;
@@ -30,6 +33,15 @@ public class ContactsActivity extends AppCompatActivity {
             startActivity(intent);
         });
         ourRecyclerView.setAdapter(ourAdapter);
+
+        //Stockage des données dans un objet de type sharedPreferences
+        SharedPreferences shared = getSharedPreferences("ourApplication", MODE_PRIVATE);
+        SharedPreferences.Editor editor = shared.edit();
+        editor.putString("test", "dataTest");
+        editor.commit();
+
+        //Récupérer une image par url et l'afficher
+        Picasso.get().load("https://picsum.photos/200/300").into((ImageView)findViewById(R.id.image_contact));
     }
 
 

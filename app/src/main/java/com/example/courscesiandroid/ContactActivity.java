@@ -2,6 +2,7 @@ package com.example.courscesiandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -21,5 +22,9 @@ public class ContactActivity extends AppCompatActivity {
         ((TextView)findViewById(R.id.contact_display_phone)).setText(contact.getPhone());
         ((TextView)findViewById(R.id.contact_display_mail)).setText(contact.getMail());
         setTitle(contact.getFirstName());
+
+        //Récupérer les données à partir d'un sharedPreferences
+        SharedPreferences shared = getSharedPreferences("ourApplication", MODE_PRIVATE);
+        String test = shared.getString("test", "");
     }
 }
